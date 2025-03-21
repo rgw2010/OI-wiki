@@ -163,6 +163,34 @@ Legendre 符号可进一步推广为 [Jacobi 符号](https://en.wikipedia.org/wi
     $$
     \left(\frac{n}{p}\right)=(-1)^m
     $$
+???+ note "Gauss 证明"
+
+    我们设 $a_1, a_2, \cdots, a_t$ 是一切小于 $\frac{p}{2}$ 的 $r_k$；同理设 $b_1, b_2, \cdots, b_m$ 是一切大于 $\frac{2}{p}$ 的 $r_k$。
+    
+    那么有所有 $r_k$ 的乘积为：
+    
+    $$\begin{aligned} r_1 r_2 \cdots r_k &\equiv (a)(2a)(3a)\cdots(\frac{p - 1}{2}a) \\ &\equiv a^{\frac{p - 1}{2}} (\frac{p - 1}{2})! \\ &\equiv \prod_{i = 1}^t a_i \prod_{j = 1}^m b_j\end{aligned}$$
+    
+    注意到 $\frac{p}{2} < b_j < p$，故有 $1 \le p - b_j < \frac{p}{2}$。
+    
+    > 若存在 $i$ 使得 $p - b_j = a_i$，即 $a_i + b_j = p$，设 $a_i = ak_1, b_j = bk_2$，则 $ak_1 + ak_2 \equiv 0 \pmod p$，那么 $k_1 + k_2 \equiv 0 \pmod p$，当 $k_1, k_2 \in [0, \frac{p - 1}{2}]$ 时是不可能的。  
+    > 故不可能存在 $i$ 使得 $a_i = p - b_j$。
+    
+    所以有 $\{a_1, \cdots, a_t, p - b_1, \cdots, p - b_m\}$ 中没有重复的数字，且 $a_i \le \frac{p - 1}{2}, p - b_i \le \frac{p - 1}{2}, t + m = \frac{p - 1}{2}$，故这是一个 $1 \sim \frac{p - 1}{2}$ 的**满射**。
+    
+    故有：
+    
+    $$\begin{aligned} \prod_{i = 1}^t a_i \prod_{j = 1}^m b_j &\equiv (-1)^m \prod_{i = 1}^t a_i \prod_{j = 1}^m (p - b_j) \\ &\equiv (-1)^m (\frac{p - 1}{2})!\end{aligned}$$
+    
+    那么有：
+    
+    $$a^{\frac{p - 1}{2}} (\frac{p - 1}{2})! \equiv (-1)^m (\frac{p - 1}{2})! \pmod p$$
+    
+    故：
+    
+    $$\left(\frac{a}{p}\right) \equiv a^{\frac{p - 1}{2}} \equiv (-1)^m  \pmod p$$
+    
+    由于 $(-1)^m \in \{1, -1\}$，故得证。
 
 这个引理可以证明如下有用的结论：
 
